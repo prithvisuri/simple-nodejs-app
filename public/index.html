@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Node.js App</title>
+  <meta name="description" content="A beautiful simple Node.js Express application with live API demos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">NodeApp</span>
+      </div>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        Server Online
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Simple <span class="gradient-text">Node.js</span> Application</h1>
+      <p class="hero-subtitle">
+        A clean Express.js server with live REST API endpoints. Click the cards below to interact with the API in real time.
+      </p>
+    </section>
+
+    <!-- Info cards -->
+    <section class="cards-grid">
+
+      <div class="card" id="card-info" onclick="fetchInfo()">
+        <div class="card-icon">📡</div>
+        <h2 class="card-title">Server Info</h2>
+        <p class="card-desc">Fetch live metadata about this server instance.</p>
+        <button class="card-btn" id="btn-info">GET /api/info</button>
+        <div class="card-result hidden" id="result-info"></div>
+      </div>
+
+      <div class="card" id="card-users" onclick="fetchUsers()">
+        <div class="card-icon">👥</div>
+        <h2 class="card-title">Users List</h2>
+        <p class="card-desc">Retrieve the list of registered users from the API.</p>
+        <button class="card-btn" id="btn-users">GET /api/users</button>
+        <div class="card-result hidden" id="result-users"></div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Built with <span class="heart">♥</span> using Node.js &amp; Express · Running on port 3000
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
