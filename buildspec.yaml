@@ -14,7 +14,6 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - # If you have a build script, uncomment the line below
       - # npm run build
   post_build:
     commands:
@@ -26,5 +25,8 @@ artifacts:
     - package.json
     - package-lock.json
     - public/**/*
-    - node_modules/**/*
-  name: build-artifact-$(date +%Y-%m-%d)
+    - .ebextensions/**/*
+    - .platform/**/*
+    - Procfile
+  # Do not include node_modules here; Elastic Beanstalk will run 'npm install' on the server
+
