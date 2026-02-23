@@ -5,11 +5,14 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - echo Installing dependencies...
+      - echo "Checking environment..."
+      - node -v
+      - npm -v
+      - echo "Installing dependencies..."
       - npm install
   pre_build:
     commands:
-      - echo Running tests...
+      - echo "Running tests..."
       - npm test
   build:
     commands:
