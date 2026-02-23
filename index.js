@@ -46,9 +46,13 @@ app.use((req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`✅  Server running at http://localhost:${PORT}`);
-    console.log(`📡  API endpoints:`);
-    console.log(`     GET /api/users  → returns a list of users`);
-    console.log(`     GET /api/info   → returns server information`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`✅  Server running at http://localhost:${PORT}`);
+        console.log(`📡  API endpoints:`);
+        console.log(`     GET /api/users  → returns a list of users`);
+        console.log(`     GET /api/info   → returns server information`);
+    });
+}
+
+module.exports = app;
