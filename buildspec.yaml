@@ -8,7 +8,8 @@ phases:
       - echo "Checking environment..."
       - node -v
       - npm -v
-      - echo "Installing dependencies..."
+      - echo "Installing dependencies (including dev)..."
+      - export NODE_ENV=development
       - npm install
   pre_build:
     commands:
