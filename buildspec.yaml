@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Running tests...
+      - # npm test
+  build:
+    commands:
+      - echo Build started on `date`
+      - # If you have a build script, uncomment the line below
+      - # npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - index.js
+    - package.json
+    - package-lock.json
+    - public/**/*
+    - node_modules/**/*
+  name: build-artifact-$(date +%Y-%m-%d)
